@@ -48,7 +48,9 @@ export default defineConfig(({mode}) => {
         ],
         resolve: {
             alias: {
-                '@': path.resolve(__dirname, 'src')
+                '@': path.resolve(__dirname, 'src'),
+                // Element Plus imports this Vue internal without declaring it as a direct dependency.
+                '@vue/shared': path.resolve(__dirname, 'node_modules/@vue/shared')
             }
         },
         build: {
